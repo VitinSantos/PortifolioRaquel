@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+/* Tokens da identidade. Para trocar a paleta, edite só aqui. */
+@theme {
+  --color-night: #07050d;      /* fundo principal */
+  --color-surface: #100b1c;    /* áreas elevadas */
+  --color-deep: #2a0f5c;       /* roxo profundo (halos) */
+  --color-violet: #7c3aed;     /* destaque gráfico (não usar em texto pequeno) */
+  --color-lilac: #b79cff;      /* violeta legível para texto e foco */
+  --color-blue: #3b5bff;
+  --color-magenta: #d6339f;
+  --color-ink: #f4f1fa;        /* texto */
+  --color-ink-soft: #a79fbd;   /* texto secundário */
+
+  --font-display: "Syne", system-ui, sans-serif;
+  --font-body: "Manrope", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+body {
+  margin: 0;
+  background: var(--color-night);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+/* Grain sutil sobre a página inteira */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.07;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='.6'/></svg>");
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-lilac);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: var(--color-magenta);
+  color: var(--color-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---------- Hero ---------- */
+.name-ghost {
+  color: rgba(244, 241, 250, 0.08);
+  -webkit-text-stroke: 1.5px rgba(244, 241, 250, 0.6);
+}
+.name-fill {
+  -webkit-text-stroke: 0;
+}
+
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.2px rgba(244, 241, 250, 0.7);
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+.spin-slow { animation: spin 26s linear infinite; }
+.marquee { animation: marquee 40s linear infinite; }
+.marquee-wrap:hover .marquee { animation-play-state: paused; }
+
+@media (prefers-reduced-motion: reduce) {
+  .spin-slow, .marquee { animation: none !important; }
+}
