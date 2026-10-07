@@ -18,6 +18,7 @@ const experience = [
 export default function PortfolioSections() {
   return (
     <div className="portfolio-content">
+      <img className="portfolio-forms" src="/raquel-forms.png" alt="Formas iridescentes da identidade visual de Raquel" aria-hidden="true" />
       <section id="projetos" className="portfolio-section projects-section">
         <Reveal className="section-heading">
 
