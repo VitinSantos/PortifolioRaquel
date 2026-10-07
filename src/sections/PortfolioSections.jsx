@@ -3,10 +3,10 @@ import Reveal from '../components/Reveal'
 import site from '../data/site'
 
 const projects = [
-  { number: '01', title: 'Construção da agência Alena', description: 'Projeto de TCC com conceito, identidade visual e direção de arte para uma agência de publicidade.', tags: ['Branding', 'Direção de arte'] },
-  { number: '02', title: 'Reposicionamento Special Dark', description: 'Campanha para comunicar a intensidade do chocolate Hershey’s em todas as estações.', tags: ['Estratégia', 'Campanha'] },
-  { number: '03', title: 'Conteúdo para redes e performance', description: 'Criativos digitais para redes sociais e tráfego pago, adaptados a diferentes formatos.', tags: ['Social media', 'Conteúdo'] },
-  { number: '04', title: 'Produção audiovisual', description: 'Captação, direção e edição de comerciais com foco em narrativa, ritmo e atmosfera.', tags: ['Vídeo', 'Edição'] },
+  { number: '01', slug: 'alena', title: 'Construção da agência Alena', description: 'Projeto de TCC com conceito, identidade visual e direção de arte para uma agência de publicidade.', tags: ['Branding', 'Direção de arte'] },
+  { number: '02', slug: 'special-dark', title: 'Reposicionamento Special Dark', description: 'Campanha para comunicar a intensidade do chocolate Hershey’s em todas as estações.', tags: ['Estratégia', 'Campanha'] },
+  { number: '03', slug: 'conteudo-performance', title: 'Conteúdo para redes e performance', description: 'Criativos digitais para redes sociais e tráfego pago, adaptados a diferentes formatos.', tags: ['Social media', 'Conteúdo'] },
+  { number: '04', slug: 'audiovisual', title: 'Produção audiovisual', description: 'Captação, direção e edição de comerciais com foco em narrativa, ritmo e atmosfera.', tags: ['Vídeo', 'Edição'] },
 ]
 
 const experience = [
@@ -28,7 +28,7 @@ export default function PortfolioSections() {
         <Reveal className="projects-grid">
 
           {projects.map((project) => (
-            <article key={project.number} className="project-card">
+            <a key={project.number} className="project-card" href={`/projetos/${project.slug}`} aria-label={`Abrir projeto: ${project.title}`}>
               <div className="project-card__top">
                 <span>{project.number}</span>
                 <span className="project-card__arrow" aria-hidden="true">↗</span>
@@ -40,7 +40,7 @@ export default function PortfolioSections() {
                   {project.tags.map((tag) => <li key={tag}>{tag}</li>)}
                 </ul>
               </div>
-            </article>
+            </a>
           ))}
         </Reveal>
       </section>
