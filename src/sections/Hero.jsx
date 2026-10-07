@@ -1,13 +1,11 @@
 import { useRef } from 'react'
 import Button from '../components/Button'
-import Marquee from '../components/Marquee'
 import NameStage from '../components/NameStage'
 import Reveal from '../components/Reveal'
 import RotatingBadge from '../components/RotatingBadge'
 import SideArt from '../components/SideArt'
 import { InstagramIcon, LinkedInIcon } from '../components/icons'
 import { art } from '../data/art'
-import { areas } from '../data/skills'
 import site from '../data/site'
 import usePointerFx from '../hooks/usePointerFx'
 
@@ -88,7 +86,6 @@ export default function Hero() {
         className="hidden h-28 w-28 sm:block lg:bottom-56 lg:right-[7vw] lg:h-40 lg:w-40 sm:bottom-52 sm:right-8"
       />
 
-      <Marquee items={areas} className="absolute bottom-8" />
     </section>
   )
 }
