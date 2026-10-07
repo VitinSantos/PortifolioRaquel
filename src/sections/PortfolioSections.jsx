@@ -1,4 +1,5 @@
 import Button from '../components/Button'
+import Reveal from '../components/Reveal'
 import site from '../data/site'
 
 const projects = [
@@ -26,12 +27,14 @@ export default function PortfolioSections() {
   return (
     <div className="portfolio-content">
       <section id="projetos" className="portfolio-section projects-section">
-        <div className="section-heading">
+        <Reveal className="section-heading">
+
           <p className="eyebrow">01 — Projetos</p>
           <h2>Ideias que ganham<br /><span>forma e presença.</span></h2>
-        </div>
+        </Reveal>
 
-        <div className="projects-grid">
+        <Reveal className="projects-grid">
+
           {projects.map((project) => (
             <article key={project.number} className="project-card">
               <div className="project-card__top">
@@ -47,18 +50,20 @@ export default function PortfolioSections() {
               </div>
             </article>
           ))}
-        </div>
+        </Reveal>
       </section>
 
       <section id="sobre" className="portfolio-section about-section">
-        <div className="section-heading">
+        <Reveal className="section-heading">
+
           <p className="eyebrow">02 — Sobre</p>
           <h2>Design com intenção,<br /><span>detalhe e movimento.</span></h2>
-        </div>
-        <div className="about-copy">
+        </Reveal>
+        <Reveal className="about-copy" delay={0.12}>
+
           <p>{site.tagline} Meu trabalho parte da escuta e transforma conceitos em identidades visuais consistentes, interfaces intuitivas e experiências que permanecem.</p>
           <Button href="#contato" variant="ghost">Vamos conversar ↗</Button>
-        </div>
+        </Reveal>
       </section>
 
       <section id="contato" className="contact-section">
