@@ -2,7 +2,6 @@ import { useRef } from 'react'
 import Button from '../components/Button'
 import NameStage from '../components/NameStage'
 import Reveal from '../components/Reveal'
-import RotatingBadge from '../components/RotatingBadge'
 import SideArt from '../components/SideArt'
 import { InstagramIcon, LinkedInIcon } from '../components/icons'
 import { art } from '../data/art'
@@ -79,12 +78,7 @@ export default function Hero() {
         </Reveal>
       </div>
 
-      <RotatingBadge
-        href="#projetos"
-        label="Ver projetos"
-        text="Designer • Portfólio • Designer • Portfólio • "
-        className="hidden h-28 w-28 sm:block lg:bottom-56 lg:right-[7vw] lg:h-40 lg:w-40 sm:bottom-52 sm:right-8"
-      />
+      <div aria-hidden="true" className="hero-fade" />
 
     </section>
   )

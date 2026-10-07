@@ -33,7 +33,7 @@ export default function SideArt({
   pointer,
   pull = 0,
   float = true,
-  mask,
+  mask = 'linear-gradient(90deg, transparent 0%, black 16%, black 84%, transparent 100%)',
   className = '',
 }) {
   const ref = useRef(null)
