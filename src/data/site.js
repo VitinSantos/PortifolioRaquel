@@ -2,9 +2,11 @@
 // o que não foi informado fica como null e a interface simplesmente não o mostra.
 const site = {
   name: 'Raquel Balduino',
-  role: 'Designer',
-  tagline: 'Transformo ideias em experiências visuais.',
-  email: null, // TODO: adicionar quando a Raquel informar
+  role: 'Técnica em Publicidade | Marketing | Design',
+  tagline: 'Design nasce de pesquisa, repertório e intenção — não apenas de estética.',
+  email: 'raquelbalduino2006@gmail.com',
+  location: 'Barueri, São Paulo, Brasil',
+  about: 'Sou curiosa e gosto de entender o contexto antes de criar. Sou técnica em Publicidade e estudante de Design Digital, atuando com criação visual, composição, tipografia e linguagem para construir soluções que comuniquem com clareza e propósito.',
 
   social: {
     instagram: {
@@ -20,6 +22,7 @@ const site = {
   nav: [
     { label: 'Projetos', href: '#projetos' },
     { label: 'Sobre', href: '#sobre' },
+    { label: 'Experiência', href: '#experiencia' },
     { label: 'Contato', href: '#contato' },
   ],
 }
